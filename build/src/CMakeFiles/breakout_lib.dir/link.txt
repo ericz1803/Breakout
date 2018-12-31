@@ -1,0 +1,2 @@
+C:/mingw64/bin/ar.exe qc libbreakout_lib.a  CMakeFiles/breakout_lib.dir/ball.cpp.obj CMakeFiles/breakout_lib.dir/edge.cpp.obj CMakeFiles/breakout_lib.dir/main.cpp.obj CMakeFiles/breakout_lib.dir/rectangle.cpp.obj CMakeFiles/breakout_lib.dir/paddle.cpp.obj CMakeFiles/breakout_lib.dir/world.cpp.obj
+C:/mingw64/bin/ranlib.exe libbreakout_lib.a

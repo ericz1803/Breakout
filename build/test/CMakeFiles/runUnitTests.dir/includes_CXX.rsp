@@ -1,0 +1,1 @@
+-IC:/Users/ericz/Documents/c++/Breakout/src -isystem C:/Users/ericz/Documents/c++/Breakout/libs/googletest-1.8.1/googletest/include -isystem C:/Users/ericz/Documents/c++/Breakout/libs/googletest-1.8.1/googletest -isystem C:/Users/ericz/Documents/c++/Breakout/libs/SFML-2.5.1/include -isystem C:/Users/ericz/Documents/c++/Breakout/libs/Box2D/include 

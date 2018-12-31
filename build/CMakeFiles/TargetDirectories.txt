@@ -1,0 +1,13 @@
+C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles/edit_cache.dir
+C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles/rebuild_cache.dir
+C:/Users/ericz/Documents/c++/Breakout/build/src/CMakeFiles/edit_cache.dir
+C:/Users/ericz/Documents/c++/Breakout/build/src/CMakeFiles/breakout_exec.dir
+C:/Users/ericz/Documents/c++/Breakout/build/src/CMakeFiles/breakout_lib.dir
+C:/Users/ericz/Documents/c++/Breakout/build/src/CMakeFiles/rebuild_cache.dir
+C:/Users/ericz/Documents/c++/Breakout/build/test/CMakeFiles/runUnitTests.dir
+C:/Users/ericz/Documents/c++/Breakout/build/test/CMakeFiles/edit_cache.dir
+C:/Users/ericz/Documents/c++/Breakout/build/test/CMakeFiles/rebuild_cache.dir
+C:/Users/ericz/Documents/c++/Breakout/build/test/build/CMakeFiles/gtest.dir
+C:/Users/ericz/Documents/c++/Breakout/build/test/build/CMakeFiles/gtest_main.dir
+C:/Users/ericz/Documents/c++/Breakout/build/test/build/CMakeFiles/edit_cache.dir
+C:/Users/ericz/Documents/c++/Breakout/build/test/build/CMakeFiles/rebuild_cache.dir
