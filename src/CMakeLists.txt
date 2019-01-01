@@ -16,6 +16,6 @@ target_link_libraries(breakout_lib sfml-graphics sfml-audio Box2D)
 target_include_directories(breakout_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 #actual program
-add_executable(breakout_exec main.cpp)
+add_executable(breakout main.cpp)
 
-target_link_libraries(breakout_exec sfml-graphics sfml-audio breakout_lib Box2D)
+target_link_libraries(breakout sfml-graphics sfml-audio breakout_lib Box2D)
