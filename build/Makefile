@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named breakout_exec
-
-# Build rule for target.
-breakout_exec: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 breakout_exec
-.PHONY : breakout_exec
-
-# fast build rule for target.
-breakout_exec/fast:
-	$(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/build
-.PHONY : breakout_exec/fast
-
-#=============================================================================
 # Target rules for targets named breakout_lib
 
 # Build rule for target.
@@ -135,6 +122,19 @@ breakout_lib: cmake_check_build_system
 breakout_lib/fast:
 	$(MAKE) -f src/CMakeFiles/breakout_lib.dir/build.make src/CMakeFiles/breakout_lib.dir/build
 .PHONY : breakout_lib/fast
+
+#=============================================================================
+# Target rules for targets named breakout
+
+# Build rule for target.
+breakout: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 breakout
+.PHONY : breakout
+
+# fast build rule for target.
+breakout/fast:
+	$(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/build
+.PHONY : breakout/fast
 
 #=============================================================================
 # Target rules for targets named runUnitTests
@@ -183,8 +183,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... breakout_exec"
 	@echo "... breakout_lib"
+	@echo "... breakout"
 	@echo "... runUnitTests"
 	@echo "... gtest"
 	@echo "... gtest_main"

@@ -111,21 +111,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/breakout_exec.dir/rule:
-	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/breakout_exec.dir/rule
-.PHONY : src/CMakeFiles/breakout_exec.dir/rule
-
-# Convenience name for target.
-breakout_exec: src/CMakeFiles/breakout_exec.dir/rule
-
-.PHONY : breakout_exec
-
-# fast build rule for target.
-breakout_exec/fast:
-	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/build
-.PHONY : breakout_exec/fast
-
-# Convenience name for target.
 src/CMakeFiles/breakout_lib.dir/rule:
 	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/breakout_lib.dir/rule
 .PHONY : src/CMakeFiles/breakout_lib.dir/rule
@@ -139,6 +124,21 @@ breakout_lib: src/CMakeFiles/breakout_lib.dir/rule
 breakout_lib/fast:
 	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_lib.dir/build.make src/CMakeFiles/breakout_lib.dir/build
 .PHONY : breakout_lib/fast
+
+# Convenience name for target.
+src/CMakeFiles/breakout.dir/rule:
+	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/breakout.dir/rule
+.PHONY : src/CMakeFiles/breakout.dir/rule
+
+# Convenience name for target.
+breakout: src/CMakeFiles/breakout.dir/rule
+
+.PHONY : breakout
+
+# fast build rule for target.
+breakout/fast:
+	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/build
+.PHONY : breakout/fast
 
 ball.obj: ball.cpp.obj
 
@@ -200,8 +200,8 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/main.cpp.obj
 	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_lib.dir/build.make src/CMakeFiles/breakout_lib.dir/main.cpp.obj
+	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -210,8 +210,8 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/main.cpp.i
 	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_lib.dir/build.make src/CMakeFiles/breakout_lib.dir/main.cpp.i
+	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -220,8 +220,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/main.cpp.s
 	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout_lib.dir/build.make src/CMakeFiles/breakout_lib.dir/main.cpp.s
+	cd c:/Users/ericz/Documents/c++/Breakout/build && $(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 paddle.obj: paddle.cpp.obj
@@ -312,8 +312,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... breakout_exec"
 	@echo "... breakout_lib"
+	@echo "... breakout"
 	@echo "... rebuild_cache"
 	@echo "... ball.obj"
 	@echo "... ball.i"

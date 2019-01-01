@@ -1,11 +1,6 @@
 [
 {
   "directory": "C:/Users/ericz/Documents/c++/Breakout/build/src",
-  "command": "C:/mingw64/bin/g++.exe  -DSFML_STATIC @CMakeFiles/breakout_exec.dir/includes_CXX.rsp  -Wall -g   -std=gnu++11 -o CMakeFiles/breakout_exec.dir/main.cpp.obj -c C:/Users/ericz/Documents/c++/Breakout/src/main.cpp",
-  "file": "C:/Users/ericz/Documents/c++/Breakout/src/main.cpp"
-},
-{
-  "directory": "C:/Users/ericz/Documents/c++/Breakout/build/src",
   "command": "C:/mingw64/bin/g++.exe  -DSFML_STATIC @CMakeFiles/breakout_lib.dir/includes_CXX.rsp  -Wall -g   -std=gnu++11 -o CMakeFiles/breakout_lib.dir/ball.cpp.obj -c C:/Users/ericz/Documents/c++/Breakout/src/ball.cpp",
   "file": "C:/Users/ericz/Documents/c++/Breakout/src/ball.cpp"
 },
@@ -33,6 +28,11 @@
   "directory": "C:/Users/ericz/Documents/c++/Breakout/build/src",
   "command": "C:/mingw64/bin/g++.exe  -DSFML_STATIC @CMakeFiles/breakout_lib.dir/includes_CXX.rsp  -Wall -g   -std=gnu++11 -o CMakeFiles/breakout_lib.dir/world.cpp.obj -c C:/Users/ericz/Documents/c++/Breakout/src/world.cpp",
   "file": "C:/Users/ericz/Documents/c++/Breakout/src/world.cpp"
+},
+{
+  "directory": "C:/Users/ericz/Documents/c++/Breakout/build/src",
+  "command": "C:/mingw64/bin/g++.exe  -DSFML_STATIC @CMakeFiles/breakout.dir/includes_CXX.rsp  -Wall -g   -std=gnu++11 -o CMakeFiles/breakout.dir/main.cpp.obj -c C:/Users/ericz/Documents/c++/Breakout/src/main.cpp",
+  "file": "C:/Users/ericz/Documents/c++/Breakout/src/main.cpp"
 },
 {
   "directory": "C:/Users/ericz/Documents/c++/Breakout/build/test",

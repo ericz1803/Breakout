@@ -68,14 +68,14 @@ CMAKE_BINARY_DIR = C:/Users/ericz/Documents/c++/Breakout/build
 # Directory level rules for directory src
 
 # Convenience name for "all" pass in the directory.
-src/all: src/CMakeFiles/breakout_exec.dir/all
 src/all: src/CMakeFiles/breakout_lib.dir/all
+src/all: src/CMakeFiles/breakout.dir/all
 
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
-src/clean: src/CMakeFiles/breakout_exec.dir/clean
 src/clean: src/CMakeFiles/breakout_lib.dir/clean
+src/clean: src/CMakeFiles/breakout.dir/clean
 
 .PHONY : src/clean
 
@@ -83,43 +83,6 @@ src/clean: src/CMakeFiles/breakout_lib.dir/clean
 src/preinstall:
 
 .PHONY : src/preinstall
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/breakout_exec.dir
-
-# All Build rule for target.
-src/CMakeFiles/breakout_exec.dir/all: src/CMakeFiles/breakout_lib.dir/all
-	$(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/depend
-	$(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles --progress-num=1,2 "Built target breakout_exec"
-.PHONY : src/CMakeFiles/breakout_exec.dir/all
-
-# Include target in all.
-all: src/CMakeFiles/breakout_exec.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/breakout_exec.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/breakout_exec.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/breakout_exec.dir/rule
-
-# Convenience name for target.
-breakout_exec: src/CMakeFiles/breakout_exec.dir/rule
-
-.PHONY : breakout_exec
-
-# clean rule for target.
-src/CMakeFiles/breakout_exec.dir/clean:
-	$(MAKE) -f src/CMakeFiles/breakout_exec.dir/build.make src/CMakeFiles/breakout_exec.dir/clean
-.PHONY : src/CMakeFiles/breakout_exec.dir/clean
-
-# clean rule for target.
-clean: src/CMakeFiles/breakout_exec.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/breakout_lib.dir
@@ -159,6 +122,43 @@ clean: src/CMakeFiles/breakout_lib.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/breakout.dir
+
+# All Build rule for target.
+src/CMakeFiles/breakout.dir/all: src/CMakeFiles/breakout_lib.dir/all
+	$(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/depend
+	$(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles --progress-num=1,2 "Built target breakout"
+.PHONY : src/CMakeFiles/breakout.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/breakout.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/breakout.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/breakout.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/ericz/Documents/c++/Breakout/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/breakout.dir/rule
+
+# Convenience name for target.
+breakout: src/CMakeFiles/breakout.dir/rule
+
+.PHONY : breakout
+
+# clean rule for target.
+src/CMakeFiles/breakout.dir/clean:
+	$(MAKE) -f src/CMakeFiles/breakout.dir/build.make src/CMakeFiles/breakout.dir/clean
+.PHONY : src/CMakeFiles/breakout.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/breakout.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory test
 
 # Convenience name for "all" pass in the directory.
@@ -182,8 +182,8 @@ test/preinstall: test/build/preinstall
 # Target rules for target test/CMakeFiles/runUnitTests.dir
 
 # All Build rule for target.
-test/CMakeFiles/runUnitTests.dir/all: test/build/CMakeFiles/gtest_main.dir/all
 test/CMakeFiles/runUnitTests.dir/all: test/build/CMakeFiles/gtest.dir/all
+test/CMakeFiles/runUnitTests.dir/all: test/build/CMakeFiles/gtest_main.dir/all
 test/CMakeFiles/runUnitTests.dir/all: src/CMakeFiles/breakout_lib.dir/all
 	$(MAKE) -f test/CMakeFiles/runUnitTests.dir/build.make test/CMakeFiles/runUnitTests.dir/depend
 	$(MAKE) -f test/CMakeFiles/runUnitTests.dir/build.make test/CMakeFiles/runUnitTests.dir/build
