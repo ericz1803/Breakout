@@ -1,6 +1,6 @@
 #include <iostream>
 #include <ctime>
-#include<string>
+#include <string>
 #include <SFML/Graphics.hpp>
 #include "world.hpp"
 #include <Box2D/Box2D.h>
@@ -22,8 +22,9 @@ int main()
     
     //configure text
     sf::Font font;
-    if (!font.loadFromFile("C:/Windows/Fonts/arial.ttf"))
+    if (!font.loadFromFile("../assets/arial.ttf"))
     {
+        std::cerr << "Failed to load font" << std::endl;
         return 1;
     }
 
@@ -119,7 +120,5 @@ int main()
         window.draw(Lives);
         window.display();
     }
-
-    delete world;
     return 0;
 }

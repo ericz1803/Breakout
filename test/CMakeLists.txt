@@ -7,10 +7,17 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/libs/googletest-1.8.1/googletest" build)
 enable_testing()
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/src)
 
-#find SFML
-set(SFML_STATIC_LIBRARIES TRUE)
-set(SFML_DIR "${PROJECT_SOURCE_DIR}/libs/sfml-2.5.1/lib/cmake/SFML")
-find_package(SFML 2.5.1 COMPONENTS graphics audio REQUIRED)
+#find sfml
+if (WIN32)
+    set(SFML_STATIC_LIBRARIES TRUE)
+    set(SFML_DIR "${PROJECT_SOURCE_DIR}/libs/SFML-2.5.1/lib/cmake/SFML")
+    find_package(SFML 2.5.1 COMPONENTS graphics audio REQUIRED)
+endif (WIN32)
+
+if (UNIX)
+    include_directories("${PROJECT_SOURCE_DIR}/libs/SFML-2.5.1/include")
+    link_directories("${PROJECT_SOURCE_DIR}/libs/SFML-2.5.1/lib")
+endif (UNIX)
 
 #find Box2D
 add_library(Box2D STATIC IMPORTED)

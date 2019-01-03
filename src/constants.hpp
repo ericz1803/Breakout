@@ -13,7 +13,7 @@ namespace constants
     //pixels from top for ball to bounce
     const float top_edge = 20.0f;
 
-    const int fps = 60;
+    const int fps = 120;
     //size of screen
     const int width = 800;
     const int height = 1050;

@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <Box2D/Box2D.h>
-#include "Rectangle.hpp"
+#include "rectangle.hpp"
 #include "shape.hpp"
 #include "constants.hpp"
 #include <iostream>
