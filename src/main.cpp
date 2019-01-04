@@ -97,18 +97,36 @@ int main()
         
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
-            //set paddle velocity to go left
-            world->set_paddle_velocity(-constants::paddle_velocity);
+            //check that the paddle is not at the border yet
+            if (world->paddle->get_position().x > (world->paddle->get_size().x / 2))
+            {
+                //set paddle velocity to go left
+                world->paddle->set_velocity(sf::Vector2f(-constants::paddle_velocity, 0.0f));
+            }
+            else
+            {
+                //stop moving
+                world->paddle->set_velocity(sf::Vector2f(0.0f, 0.0f));
+            }
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
-            //set paddle to go right
-            world->set_paddle_velocity(constants::paddle_velocity);
+            //check that the paddle is not at the border yet
+            if (world->paddle->get_position().x < (constants::width - (world->paddle->get_size().x / 2)))
+            {
+                //set paddle to go right
+                world->paddle->set_velocity(sf::Vector2f(constants::paddle_velocity, 0.0f));
+            }
+            else
+            {
+                //stop moving
+                world->paddle->set_velocity(sf::Vector2f(0.0f, 0.0f));
+            }
         }
         else 
         {
             //stop moving
-            world->set_paddle_velocity(0.0f);
+            world->paddle->set_velocity(sf::Vector2f(0.0f, 0.0f));
         }
 
         world->update_display(&score);

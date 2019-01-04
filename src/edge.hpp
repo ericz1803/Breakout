@@ -12,9 +12,11 @@ namespace breakout
         public:
             Edge(sf::Vector2f top_left, sf::Vector2f size, b2World* world);
             ~Edge();
+            
             void start_contact(Shape* crashedWith);
             void end_contact(Shape* crashedWith);
-
+        
+        private:
             b2Body* edge_body;
     };
 }

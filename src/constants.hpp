@@ -19,7 +19,7 @@ namespace constants
     const int height = 1050;
     
     //paddle velocity (physics not pixels)
-    const float paddle_velocity = 5.0f;
+    const float paddle_velocity = 500.0f;
 }
 
 #endif

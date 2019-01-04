@@ -13,23 +13,24 @@ namespace breakout
             Ball(const sf::Vector2f position, const float r, const sf::Vector2f velocity, 
                  b2World* world, const sf::Color color = sf::Color::White);
             ~Ball();
-            //functions
-            void set_color(sf::Color color);
-            void set_color(int r, int g, int b);
-            void update_display();
+            
+            sf::Vector2f get_position();
             void start_contact(Shape* crashedWith);
             void end_contact(Shape* crashedWith);
-            sf::Vector2f get_position();
 
+            void set_color(sf::Color color);
+            void set_color(int r, int g, int b);
+
+            void update_display();
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
             
-
         private:
             b2Body* circle_physics;
             float r;
             
-            //visuals
+            //circle for display
             sf::CircleShape circle_display;
     };
 }
+
 #endif

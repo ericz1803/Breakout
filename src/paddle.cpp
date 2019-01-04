@@ -41,28 +41,21 @@ namespace breakout
 
     }
 
-    void Paddle::set_color(sf::Color color)
-    {
-        paddle_display.setFillColor(color);
-    }
-
-    void Paddle::set_color(int r, int g, int b)
-    {
-        sf::Color color(r, g, b);
-        paddle_display.setFillColor(color);
-    }
 
     void Paddle::set_velocity(sf::Vector2f velocity)
     {
+        //set velocity (pixels/s)
         paddle_physics->SetLinearVelocity(b2Vec2(velocity.x / constants::scale_factor, 
                                           velocity.y / constants::scale_factor));
     }
+
 
     sf::Vector2f Paddle::get_velocity()
     {
         b2Vec2 velocity = paddle_physics->GetLinearVelocity();
         return sf::Vector2f(velocity.x, velocity.y);
     }
+
 
     sf::Vector2f Paddle::get_position()
     {
@@ -74,14 +67,33 @@ namespace breakout
     }
 
 
+    sf::Vector2f Paddle::get_size()
+    {
+        return size;
+    }
 
     void Paddle::start_contact(Shape* crashedWith)
     {
     }
     
+
     void Paddle::end_contact(Shape* crashedWith)
     {
     }
+
+
+    void Paddle::set_color(sf::Color color)
+    {
+        paddle_display.setFillColor(color);
+    }
+
+
+    void Paddle::set_color(int r, int g, int b)
+    {
+        sf::Color color(r, g, b);
+        paddle_display.setFillColor(color);
+    }
+
 
     void Paddle::update_display()
     {
@@ -93,10 +105,12 @@ namespace breakout
         paddle_display.setPosition(sf::Vector2f(position.x - size.x / 2, position.y - size.y / 2));
     }
 
+
     void Paddle::draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
         target.draw(paddle_display, states);
     }
+
 
     Paddle::~Paddle()
     {

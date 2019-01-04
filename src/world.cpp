@@ -77,60 +77,14 @@ namespace breakout
 
     }
     
-    void World::reset_bricks()
+    
+    void World::step(float32 time_step, int32 velocity_iterations, int32 position_iterations)
     {
-        //make sure bricks vector is empty
-        for (std::vector<Rectangle*>::iterator it = bricks.begin(); it != bricks.end(); ++it)
-        {
-            (*it)->~Rectangle();
-        }
-        bricks.clear();
-
-        //initialize bricks
-        for (int i = 0; i < 6; i++)
-        {
-            for (int j = 0; j < 16; j++)
-            {
-                //create a rectangle in place at end of vector
-                Rectangle* brick = new Rectangle(sf::Vector2f((25 + 50 * j), (100 + 25 * i)), 
-                                                                     sf::Vector2f(50.0, 25.0), b2world);
-                switch (i)
-                {
-                    case 0:
-                        brick->set_color(sf::Color::Red);
-                        break;
-                    case 1:
-                        //orange
-                        brick->set_color(255, 100, 0);
-                        break;
-                    case 2:
-                        brick->set_color(255, 170, 0);
-                        break;
-                    case 3:
-                        brick->set_color(sf::Color::Yellow);
-                        break;
-                    case 4:
-                        brick->set_color(sf::Color::Green);
-                        break;
-                    case 5:
-                        brick->set_color(sf::Color::Blue);
-                        break;
-
-                }
-                bricks.push_back(brick);
-            }
-        }
+        b2world->Step(time_step, velocity_iterations, position_iterations);
     }
 
-    void World::reset_ball()
-    {
-        delete ball;
-        //ball
-        ball = new Ball(sf::Vector2f(paddle->get_position().x, paddle->get_position().y - 25.0f),
-                                     15.0f, sf::Vector2f(200.0, -600.0), b2world);
-    }
 
-    void World::reset()
+    void World::reset_all()
     {
         //get rid of old world
         for (std::vector<Rectangle*>::iterator it = bricks.begin(); it != bricks.end(); ++it)
@@ -186,15 +140,61 @@ namespace breakout
                                      15.0f, sf::Vector2f(200.0, -600.0), b2world);
     }
 
-    void World::set_paddle_velocity(float velocity)
+
+    void World::reset_bricks()
     {
-        paddle->paddle_physics->SetLinearVelocity(b2Vec2(velocity, 0.0f));
+        //make sure bricks vector is empty
+        for (std::vector<Rectangle*>::iterator it = bricks.begin(); it != bricks.end(); ++it)
+        {
+            (*it)->~Rectangle();
+        }
+        bricks.clear();
+
+        //initialize bricks
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 16; j++)
+            {
+                //create a rectangle in place at end of vector
+                Rectangle* brick = new Rectangle(sf::Vector2f((25 + 50 * j), (100 + 25 * i)), 
+                                                                     sf::Vector2f(50.0, 25.0), b2world);
+                switch (i)
+                {
+                    case 0:
+                        brick->set_color(sf::Color::Red);
+                        break;
+                    case 1:
+                        //orange
+                        brick->set_color(255, 100, 0);
+                        break;
+                    case 2:
+                        brick->set_color(255, 170, 0);
+                        break;
+                    case 3:
+                        brick->set_color(sf::Color::Yellow);
+                        break;
+                    case 4:
+                        brick->set_color(sf::Color::Green);
+                        break;
+                    case 5:
+                        brick->set_color(sf::Color::Blue);
+                        break;
+
+                }
+                bricks.push_back(brick);
+            }
+        }
     }
 
-    void World::step(float32 time_step, int32 velocity_iterations, int32 position_iterations)
+
+    void World::reset_ball()
     {
-        b2world->Step(time_step, velocity_iterations, position_iterations);
+        delete ball;
+        //ball
+        ball = new Ball(sf::Vector2f(paddle->get_position().x, paddle->get_position().y - 25.0f),
+                                     15.0f, sf::Vector2f(200.0, -600.0), b2world);
     }
+
 
     void World::update_display(int* score)
     {
@@ -217,6 +217,7 @@ namespace breakout
         paddle->update_display();
     }
 
+
     void World::draw(sf::RenderWindow* window)
     {
         window->clear(sf::Color::Black);
@@ -228,6 +229,7 @@ namespace breakout
         window->draw(*paddle);
 
     }
+
 
     World::~World()
     {

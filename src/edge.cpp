@@ -31,13 +31,16 @@ namespace breakout
         edge_body->SetUserData(this);
     }
 
+
     void Edge::start_contact(Shape* crashedWith)
     {
     }
     
+
     void Edge::end_contact(Shape* crashedWith)
     {
     }
+
 
     Edge::~Edge()
     {

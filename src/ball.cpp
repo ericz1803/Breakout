@@ -15,6 +15,7 @@ namespace breakout
     : r(r)
     {
         type = ball;
+
         //box2d circle
         b2BodyDef body_def;
         body_def.type = b2_dynamicBody;
@@ -40,30 +41,30 @@ namespace breakout
         //set user data for collision callback
         circle_physics->SetUserData(this);
 
+
         //display circle
         circle_display.setPosition(position);
         circle_display.setRadius(r);
         circle_display.setFillColor(color);
     }
 
-    void Ball::update_display()
+
+
+    sf::Vector2f Ball::get_position()
     {
+        //returns display position (position in pixels)
         b2Vec2 position = circle_physics->GetPosition();
         //scale back up
         position.x *= constants::scale_factor;
         position.y *= constants::scale_factor;
-        
-        circle_display.setPosition(sf::Vector2f(position.x - r, position.y - r));
+        return sf::Vector2f(position.x, position.y);
     }
 
-    void Ball::set_color(sf::Color color)
-    {
-        circle_display.setFillColor(color);
-    }
 
     void Ball::start_contact(Shape* crashedWith)
     {
     }
+
 
     void Ball::end_contact(Shape* crashedWith)
     {
@@ -96,6 +97,12 @@ namespace breakout
         }
     }
 
+    
+    void Ball::set_color(sf::Color color)
+    {
+        circle_display.setFillColor(color);
+    }
+
 
     void Ball::set_color(int r, int g, int b)
     {
@@ -103,20 +110,23 @@ namespace breakout
         circle_display.setFillColor(color);
     }
 
+
+    void Ball::update_display()
+    {
+        b2Vec2 position = circle_physics->GetPosition();
+        //scale back up
+        position.x *= constants::scale_factor;
+        position.y *= constants::scale_factor;
+        
+        circle_display.setPosition(sf::Vector2f(position.x - r, position.y - r));
+    }
+
+
     void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
         target.draw(circle_display, states);
     }
 
-    sf::Vector2f Ball::get_position()
-    {
-        //returns display position
-        b2Vec2 position = circle_physics->GetPosition();
-        //scale back up
-        position.x *= constants::scale_factor;
-        position.y *= constants::scale_factor;
-        return sf::Vector2f(position.x, position.y);
-    }
 
     Ball::~Ball()
     {

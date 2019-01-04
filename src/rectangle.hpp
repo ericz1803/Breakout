@@ -13,12 +13,13 @@ namespace breakout
                       b2World* world, const sf::Color color = sf::Color::White);
             ~Rectangle();
             //position is top left of rectangle
-
-            //functions
-            void set_color(sf::Color color);
-            void set_color(int r, int g, int b);
+            
             void start_contact(Shape* crashedWith);
             void end_contact(Shape* crashedWith);
+
+            void set_color(sf::Color color);
+            void set_color(int r, int g, int b);
+
             void update_display();
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
             
@@ -35,7 +36,5 @@ namespace breakout
             sf::RectangleShape rectangle_display;
     };
 }
-
-
 
 #endif

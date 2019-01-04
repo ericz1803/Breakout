@@ -19,21 +19,23 @@ namespace breakout
         public:
             World();
             ~World();
+
+            void step(float32 time_step, int32 velocity_iterations, int32 position_iterations);
+
+            void reset_all();
+            void reset_bricks();
+            void reset_ball();
+
+            void update_display(int* score);
+            void draw(sf::RenderWindow* window);
+
             b2World* b2world;
             ContactListener contact_listener;
             Edge* edge;
             std::vector<Rectangle*> bricks;
             Paddle* paddle;
             Ball* ball;
-            void step(float32 time_step, int32 velocity_iterations, int32 position_iterations);
-            void update_display(int* score);
-            void draw(sf::RenderWindow* window);
-            void reset();
-            void reset_bricks();
-            void reset_ball();
-            void set_paddle_velocity(float velocity);
     };
 }
-
 
 #endif

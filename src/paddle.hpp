@@ -15,33 +15,29 @@ namespace breakout
             ~Paddle();
             //position is top left of paddle
 
-            //functions
-            void set_color(sf::Color color);
-            void set_color(int r, int g, int b);
-            void update_display();
             void set_velocity(sf::Vector2f velocity);
             sf::Vector2f get_velocity();
+            sf::Vector2f get_position();
+            sf::Vector2f get_size();
             void start_contact(Shape* crashedWith);
             void end_contact(Shape* crashedWith);
-            sf::Vector2f get_position();
+
+            void set_color(sf::Color color);
+            void set_color(int r, int g, int b);
+
+            void update_display();
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+        private:
             //physics rectangle
             b2Body* paddle_physics;
-
-        private:
-            //full size of paddle
+            
+            //full size of paddle (pixels)
             sf::Vector2f size;
 
             //display rectangle
             sf::RectangleShape paddle_display;
     };
 }
-
-
-
-
-
-
 
 #endif

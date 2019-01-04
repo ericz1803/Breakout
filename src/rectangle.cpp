@@ -41,10 +41,23 @@ namespace breakout
         rectangle_display.setOutlineThickness(1.0f);    
     }
 
+
+    void Rectangle::start_contact(Shape* crashedWith)
+    {
+    }
+
+
+    void Rectangle::end_contact(Shape* crashedWith)
+    {
+        remove = true;
+    }
+
+
     void Rectangle::set_color(sf::Color color)
     {
         rectangle_display.setFillColor(color);
     }
+
 
     void Rectangle::set_color(int r, int g, int b)
     {
@@ -52,14 +65,6 @@ namespace breakout
         rectangle_display.setFillColor(color);
     }
 
-    void Rectangle::start_contact(Shape* crashedWith)
-    {
-    }
-
-    void Rectangle::end_contact(Shape* crashedWith)
-    {
-        remove = true;
-    }
 
     void Rectangle::update_display()
     {
@@ -71,10 +76,12 @@ namespace breakout
         rectangle_display.setPosition(sf::Vector2f(position.x - (size.x / 2), position.y - (size.y / 2)));
     }
 
+
     void Rectangle::draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
         target.draw(rectangle_display, states);
     }
+
 
     Rectangle::~Rectangle()
     {
