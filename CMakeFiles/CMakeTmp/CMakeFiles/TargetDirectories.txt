@@ -1,2 +1,0 @@
-C:/Users/ericz/Documents/c++/Breakout/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_919b7.dir
-C:/Users/ericz/Documents/c++/Breakout/CMakeFiles/CMakeTmp/CMakeFiles/ALL_BUILD.dir
