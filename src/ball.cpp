@@ -69,21 +69,18 @@ namespace breakout
     void Ball::end_contact(Shape* crashedWith)
     {
         b2Vec2 velocity = circle_physics->GetLinearVelocity();
-        
-        //prevent too fast or too slow ball
-        if (hypot(velocity.x, velocity.y) > (constants::upper_ball_velocity / constants::scale_factor))
-        {
-            float scale_f = ((constants::upper_ball_velocity / constants::scale_factor) / hypot(velocity.x, velocity.y));
-            velocity.x *= scale_f;
-            velocity.y *= scale_f;
-        }
-        else if (hypot(velocity.x, velocity.y) < (constants::lower_ball_velocity / constants::scale_factor))
-        {
-            float scale_f = ((constants::lower_ball_velocity / constants::scale_factor) / hypot(velocity.x, velocity.y));
-            velocity.x *= scale_f;
-            velocity.y *= scale_f;
-        }
 
+        //prevent the ball from travelling too slow in the y direction
+        if (abs(velocity.y) > (constants::upper_ball_velocity_y / constants::scale_factor))
+        {
+            float scale_f = ((constants::upper_ball_velocity_y / constants::scale_factor) / abs(velocity.y));
+            velocity.y *= scale_f;
+        }
+        else if (abs(velocity.y) < (constants::lower_ball_velocity_y / constants::scale_factor))
+        {
+            float scale_f = ((constants::lower_ball_velocity_y / constants::scale_factor) / abs(velocity.y));
+            velocity.y *= scale_f;
+        }
         //add randomness / control if hits paddle
         if (crashedWith->type == paddle)
         {
@@ -97,7 +94,7 @@ namespace breakout
         }
     }
 
-    
+
     void Ball::set_color(sf::Color color)
     {
         circle_display.setFillColor(color);

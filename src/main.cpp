@@ -38,12 +38,12 @@ int main()
 
     //score tracking
     int score = 0;
-    sf::Text Score("Score: 0", font, 24);
+    sf::Text Score("Score: " + std::to_string(score), font, 24);
     Score.setPosition(sf::Vector2f((float)constants::width - 150.0f, 0.0f));
 
     //lives tracking
     int lives = 3;
-    sf::Text Lives("Lives: 3", font, 24);
+    sf::Text Lives("Lives: " + std::to_string((int) lives), font, 24);
     Lives.setPosition(sf::Vector2f((float)constants::width - 300.0f, 0.0f));
     
     //set up world
